@@ -1,0 +1,110 @@
+/* FUENTES */
+@font-face {
+    font-family: "Roboto1";
+    src: url(../assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf);
+    font-weight: 200 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto2";
+    src: url(../assets/fonts/Roboto-VariableFont_wdth,wght.ttf);
+    font-weight: 200 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../assets/fonts/montserrat-VariableFont_wght.ttf);
+    font-weight: 200 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url(../assets/fonts/Quicksand-VariableFont_wght.ttf);
+    font-weight: 200 900;
+    font-style: normal;
+}
+
+
+/* VARIABLES */
+:root {
+    --font-titulo: "Roboto1", sans-serif;
+    --font-texto: "Roboto2", sans-serif;
+    --font-titulo2: "Montserrat", sans-serif;
+    --font-principal: "Quicksand", sans-serif;
+
+    --color-violeta-oscuro1: #0d0b2f;
+    --color-violeta-oscuro2: #1a165c;
+    --color-violeta-oscuro3: #2f0f70;
+
+    --color-violeta-claro1: #fffaf4;
+    --color-violeta-claro2: #c8c5ff;
+    --color-violeta-claro3: #ccb1ff;
+
+    --color-fondo-suave3: var(--color-violeta-claro1);
+    --color-fondo-suave2: var(--color-violeta-claro2);
+    --color-fondo-suave1: var(--color-violeta-claro3);
+
+    --color-fondo-fuerte2: var(--color-violeta-oscuro3);
+
+    --color-texto-oscuro1: var(--color-violeta-oscuro1);
+    --color-texto-suave1: var(--color-violeta-claro3);
+}
+
+
+/* ESTRUCTURA GENERAL */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    font-family: var(--font-texto);
+    background: linear-gradient(135deg,
+    var(--color-violeta-claro1),
+    var(--color-violeta-claro2)
+ );
+  
+}
+
+header,
+footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+/* indicador visual para enlaces activos */
+.nav-link.active,
+.navegacion a.activo,
+.navegacion a.active {
+    border-bottom: 3px solid var(--color-violeta-claro3);
+    color: var(--color-violeta-claro1);
+}
+
+/*esrilos y complementos bootstrap */
+footer {
+    border-top: 3px solid var(--color-violeta-oscuro2);
+}
+
+footer span {
+    font-family: var(--font-titulo);
+}
+
+footer p,
+footer a {
+    font-family: var(--font-texto);
+}
+
+/* efecto interactivo para los enlaces de redes sociales en Bootstrap */
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-violeta-claro3) !important;
+    transform: translateY(-2px);
+}

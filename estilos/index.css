@@ -1,0 +1,79 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-principal{
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+
+.texto-p {
+    font-family: var(--font-titulo2);
+    color: var(--color-violeta-oscuro1);
+}
+
+.texto-blanco{
+    font-family: var(--font-principal);
+    color: var(--color-violeta-claro1);
+
+}
+
+.boton-logo {
+    background-color: var(--color-violeta-oscuro3);
+    color: #ffffff;
+    border: none;
+}
+
+.boton-logo:hover,
+.boton-logo:focus,
+.boton-logo:active {
+    background-color: var(--color-violeta-oscuro3);
+    color: #ffffff; 
+    opacity: 0.9; 
+}
+.boton-logo-claro{
+    background-color: var(--color-violeta-claro1);
+}
+
+.imagen{
+    transition:transform 1s ease;
+}
+
+.imagen:hover{
+  transform: translateX(30px); 
+}
+/*Lineas al rededor de la huella*/
+.icon-huella::before,
+.icon-huella::after {
+  content: "";
+  display: flex;
+  width: 60px; 
+  height: 1px;
+  background-color: var(--color-violeta-oscuro3);
+}
+
+ /*configuracion de las tarjetas*/
+.card-servicio{
+    background-color: var(--color-violeta-claro1);
+    box-shadow: 0 1px 1.2rem var(--color-violeta-oscuro3);
+    transition: transform 1s ease;
+}
+
+.card-servicio:hover{
+    transform: translateY(-10px);
+}
+
+/*configuracion de videos*/
+.video{
+    width: 20rem;
+    background-color: var(--color-violeta-claro1);
+    box-shadow: 0 1px 1.2rem var(--color-violeta-oscuro3);
+}
+
+/*configuracion de mapa*/
+.mapa iframe{
+    box-shadow: 0 4px 12px var(--color-violeta-oscuro3);
+}

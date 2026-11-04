@@ -1,0 +1,83 @@
+/* Título principal */
+.titulo-mascotas,
+.buscadorMascotas {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+    font-weight: 800;
+}
+
+.titulo-principal::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--color-violeta-oscuro3);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* Formulario y tarjeta de filtro */
+#formularioMascota,
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#formularioMascota h2 {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+
+/* Etiquetas de los formularios */
+#formularioMascota .form-label,
+.tabla .form-label {
+    color: var(--color-violeta-oscuro2);
+    font-weight: 600;
+}
+
+/* Botón de registro */
+#formularioMascota .btn-primary {
+    background-color: var(--color-violeta-oscuro3);
+    border-color: var(--color-violeta-oscuro3);
+}
+
+/* Número total de mascotas */
+#totalMascotas {
+    background-color: var(--color-violeta-oscuro3);
+    color: var(--color-violeta-claro1);
+}
+
+/* Tabla de mascotas */
+main {
+    min-width: 0;
+}
+
+.tabla-mascotas table {
+    min-width: 700px;
+    border-style: hidden;
+}
+
+.tabla-mascotas td {
+    padding-block: 0.25rem;
+}
+
+.tabla-mascotas td:nth-child(6) {
+    padding-inline: 0.25rem;
+}
+
+.tabla-mascotas td:nth-child(6) img {
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;  /*ajusta la posición de la imagen*/
+    margin: 0 auto;
+}
+
+.tabla-mascotas td:last-child {
+    width: 1%;
+    white-space: nowrap;
+    padding-inline: 0.25rem;
+}
+.tabla-mascotas .btn {
+    min-width: 75px;
+}
+
+

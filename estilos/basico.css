@@ -1,0 +1,72 @@
+/*/* Reset básico 
+/** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img,picture, video, canvas, svg {
+    max-width: 100%;
+}
+
+input, button, textarea, select{
+    font:inherit;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* TABLAS */
+/* Estilos compartidos por Index y Contacto */
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-violeta-claro1);
+    margin-top: 1rem;
+}
+.tabla th {
+    background-color: var(--color-violeta-claro3);
+    color: var(--color-violeta-oscuro3);
+    font-weight: 800;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 1.1rem;
+    font-family: var(--font-principal);
+}
+.tabla td {
+    padding: 1rem;
+    color: var(--color-violeta-oscuro2);
+    border-bottom: 1px dashed var(--color-violeta-oscuro3);
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: var(--font-principal);
+}
+.tabla tr:hover {
+    background-color: var(--color-violeta-claro2);
+}

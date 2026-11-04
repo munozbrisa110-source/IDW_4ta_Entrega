@@ -1,0 +1,188 @@
+
+/* títulos y fuente */
+.valores h2,
+.instalaciones h2,
+.testimonios h2,
+.preguntas-frecuentes h2,
+.texto-sobre-nosotros h2,
+.bloque-institucional h2,
+.card-valor h3,
+.foto-galeria figcaption,
+.autor-testimonio {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+
+
+/* título principal */
+.titulo-institucional {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+    font-size: 3.2rem;
+    font-weight: 800;
+}
+.titulo-institucional::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--color-violeta-oscuro3);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+
+/* título de sección */
+.valores h2,
+.instalaciones h2,
+.testimonios h2,
+.preguntas-frecuentes h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+
+/* sobre nosotros */
+.sobre-nosotros-contenido {
+    max-width: 1500px;
+}
+.texto-sobre-nosotros h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.texto-sobre-nosotros h2::after {
+    content: "🐾";
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+.texto-sobre-nosotros p {
+    font-family: var(--font-titulo2);
+    color: var(--color-violeta-oscuro1);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.imagen-institucional {
+    width: 100%;
+    max-width: 800px;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 60px 0px 60px 0px;
+    box-shadow: 0 8px 25px rgba(13, 11, 47, 0.15);
+}
+
+
+/* misión y visión */
+.bloque-institucional {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.bloque-institucional p {
+    font-family: var(--font-titulo2);
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+.mision-vision .bloque-institucional:first-child {
+    border-left: 10px solid var(--color-violeta-oscuro3);
+}
+.mision-vision .bloque-institucional:last-child {
+    border-right: 10px solid var(--color-violeta-oscuro3);
+}
+
+
+/* valores */
+.card-valor {
+    background-color: var(--color-violeta-claro1);
+    transition: transform 0.3s ease;
+}
+.card-valor:hover {
+    transform: translateY(-5px);
+}
+
+
+/* instalaciones */
+.foto-galeria img {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* testimonios */
+.card-testimonio {
+    background-color: var(--color-violeta-claro1);
+    border-top: 4px solid var(--color-violeta-claro3);
+    transition: transform 0.3s ease;
+}
+.card-testimonio:hover {
+    transform: translateY(-5px);
+}
+.autor-testimonio .mascota {
+    color: #777777;
+}
+
+
+/* FAQ */
+.item-faq {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.item-faq:not([open]):hover {
+    background-color: var(--color-violeta-claro3);
+}
+.item-faq:not([open]):hover summary {
+    color: var(--color-violeta-claro1);
+}
+.item-faq summary {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    user-select: none;
+    text-align: left;
+}
+.respuesta-faq {
+    border-top: 1px solid var(--color-fondo-suave2);
+}
+.respuesta-faq p {
+    font-family: var(--font-titulo2);
+    color: #4a4a4a;
+    margin: 12px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* responsive */
+@media (max-width: 767px) {
+
+    .titulo-institucional {
+        font-size: 2.4rem;
+    }
+    .valores h2,
+    .instalaciones h2,
+    .testimonios h2,
+    .preguntas-frecuentes h2 {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .titulo-institucional {
+        font-size: 2.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .bloque-institucional {
+        width: 85%;
+    }
+    .institucional .container {
+        width: 100%;
+        max-width: 1500px;
+    }
+}
