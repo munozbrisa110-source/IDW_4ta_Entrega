@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Veterinaria La Mary</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./estilos/basico.css">
+    <link rel="stylesheet" href="./estilos/base.css">
+    <link rel="stylesheet" href="./estilos/contactos.css">
+
+    <!-- Scripts JS -->
+    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sesion.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  
+    <!-- HEADER (visibilidad de menú gestionada según sesión) -->
+    <header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid">
+            <a href="./index.html" class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none">
+                <img src="./assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50" class="img-fluid object-fit-contain">
+                <div>
+                    <h1 class="h4 mb-0 fw-bold">La Mary</h1>
+                    <h2 class="h6 mb-0 text-uppercase opacity-75" style="font-size: 0.75rem;">Clínica Veterinaria</h2>
+                </div>
+            </a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul class="navbar-nav gap-2 gap-lg-3 text-center mt-3 mt-lg-0" id="navLinks">
+                    <li class="nav-item"><a href="./index.html" class="nav-link text-white">Inicio</a></li>
+                    <li class="nav-item"><a href="./institucional.html" class="nav-link text-white">Institucional</a></li>
+                    <li class="nav-item"><a href="./contactos.html" class="nav-link text-white active" aria-current="page">Contacto</a></li>
+                    <!-- Las opciones de administración se muestran solo si hay sesión activa -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="py-4">
+        <section class="container mb-5 contacto-seccion-principal">
+            <div class="row align-items-start g-4">
+                
+                <!-- Canales Oficiales e Imagen -->
+                <article class="col-12 col-lg-5 contacto-info">
+                    <h1 class="titulo-principal fw-bold display-4 mb-3">Contacto</h1>
+                    <p class="subtitulo-contacto fs-5 text-muted mb-4">
+                        Comunicate con nuestro equipo médico y administrativo a través de nuestros canales oficiales:
+                    </p>
+
+                    <div class="datos-contacto d-flex flex-column gap-3 fs-5 mb-4">
+                        <p class="mb-0 d-flex align-items-center gap-2">
+                            <img src="./assets/imagen/whatsapp_10.png" alt="WhatsApp" width="30" height="30" class="icono-contacto img-fluid">
+                            <strong>WhatsApp:</strong>
+                            <a href="https://wa.me/543454056923" target="_blank" class="text-decoration-none text-dark">3454056923</a>
+                        </p>
+
+                        <p class="mb-0 d-flex align-items-center gap-2">
+                            <strong>Email:</strong>
+                            <a href="mailto:veterinarialamary@gob.ar" class="text-decoration-none text-primary">veterinarialamary@gob.ar</a>
+                        </p>
+
+                        <p class="mb-0 d-flex align-items-center gap-2">
+                            <span><strong>Dirección:</strong> Gdor. Gral. Balcarce 327, Concordia, Entre Ríos</span>
+                        </p>
+                    </div>
+
+                    <div class="contacto-imagen text-center d-none d-lg-block">
+                        <img src="./assets/imagen/imagen09.jfif" alt="Imagen de contacto" class="img-fluid rounded-4 shadow-sm object-fit-cover w-100" style="max-height: 270px;">
+                    </div>
+                </article>
+
+                <!-- Formulario de Consulta General -->
+                <article class="col-12 col-lg-7">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                        <h2 class="titulo-principal fw-bold fs-3 mb-1">Envianos tu Consulta</h2>
+                        <p class="text-muted small mb-4">Escribinos para resolver dudas sobre servicios, especialidades o inquietudes generales.</p>
+
+                        <form action="#" method="POST" class="row g-3" id="formContactoSimple">
+                            <div class="col-12 col-md-6">
+                                <label for="nombreContacto" class="form-label fw-semibold small mb-1">Nombre y Apellido *</label>
+                                <input type="text" class="form-control rounded-3" id="nombreContacto" name="nombreContacto" placeholder="Ej: María Gómez" required>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="medioContacto" class="form-label fw-semibold small mb-1">Email o Teléfono *</label>
+                                <input type="text" class="form-control rounded-3" id="medioContacto" name="medioContacto" placeholder="Ej: maria@gmail.com o 3454123456" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="asuntoContacto" class="form-label fw-semibold small mb-1">Asunto *</label>
+                                <input type="text" class="form-control rounded-3" id="asuntoContacto" name="asuntoContacto" placeholder="Ej: Consulta sobre especialidades o atención" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="mensajeContacto" class="form-label fw-semibold small mb-1">Mensaje *</label>
+                                <textarea class="form-control rounded-3" id="mensajeContacto" name="mensajeContacto" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+                            </div>
+
+                            <div class="col-12 text-end mt-3">
+                                <button type="submit" class="btn text-white fw-bold px-4 py-2 rounded-3 w-100 w-md-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+                                    Enviar Consulta
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Ubicación y Horarios -->
+        <section class="container my-5 pt-4 ubicacion">
+            <div class="text-center mb-4">
+                <h2 class="titulo-principal fw-bold fs-1 mb-2">¿Dónde estamos y cuándo atendemos?</h2>
+                <div class="d-flex align-items-center justify-content-center g-1 icon-huella my-2">
+                    <img src="./assets/imagen/logo_patita.png" alt="Huella" width="70">
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center justify-content-center">
+                <article class="col-12 col-lg-6 mapa">
+                    <div class="shadow-sm rounded-4 overflow-hidden" style="min-height: 350px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d851.2291410887108!2d-58.0235525!3d-31.3859962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ade816b7f57551%3A0x95270adb0f221cf8!2sGdor.%20Gral.%20Balcarce%20327%2C%20E3202%20Concordia%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </article>
+
+                <article class="col-12 col-lg-6 tabla">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <h3 class="titulo-principal fw-bold fs-3 mb-3 text-center text-lg-start">Horarios de atención</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">Día</th>
+                                        <th scope="col">Mañana</th>
+                                        <th scope="col">Tarde</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lunes a viernes</td>
+                                        <td>08:00 a 12:00</td>
+                                        <td>16:00 a 20:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sábados</td>
+                                        <td>09:00 a 12:00</td>
+                                        <td class="text-danger fw-semibold">Cerrado</td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <td class="fw-bold">Urgencias</td>
+                                        <td class="fw-bold text-success">24hs</td>
+                                        <td class="fw-bold text-success">24hs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="text-center text-md-start">
+                <span class="fs-4 fw-bold d-block">La Mary</span>
+                <p class="fst-italic my-1 opacity-75">"Ciencia, medicina y cariño para asegurar la vida de tu compañero"</p>
+                <p class="small mb-0 opacity-75">Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br>Lunes a sábado. Urgencias 24hs</p>
+            </div>
+            <div class="text-center text-md-end">
+                <span class="fw-bold d-block mb-2">Seguinos</span>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap">
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Instagram</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Facebook</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

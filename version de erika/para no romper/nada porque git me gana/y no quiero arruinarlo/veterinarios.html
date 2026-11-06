@@ -1,0 +1,210 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head>     
+        <meta charset="UTF-8">     
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+        <title>Gestión de Veterinarios</title>      
+        <!-- Estilos CSS -->     
+         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">     
+         <link rel="stylesheet" href="estilos/basico.css">     
+         <link rel="stylesheet" href="estilos/base.css">     
+         <link rel="stylesheet" href="estilos/veterinarios.css">      
+         <!-- Scripts JS -->     
+          <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>     
+          <script defer src="./js/sesion.js"></script>
+            <script defer src="./js/veterinarios.js"></script> 
+        </head> 
+        <body class="d-flex flex-column min-vh-100">      
+<!-- HEADER -->     
+        <header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">         
+            <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid">             
+                <a href="index.html" class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none">                 
+                    <img src="assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50" class="img-fluid object-fit-contain">                 
+                    <div>                     
+                        <h1 class="h4 mb-0 fw-bold">La Mary</h1>                     
+                        <h2 class="h6 mb-0 text-uppercase opacity-75" style="font-size: 0.75rem;">Clínica Veterinaria</h2>                 
+                    </div>             
+                </a>             
+                <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">                 
+                        <span class="navbar-toggler-icon"></span>             
+                </button>             
+                <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">                 
+                    <ul class="navbar-nav gap-2 gap-lg-3 text-center mt-3 mt-lg-0">                     
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-white">Inicio</a>
+                        </li>                     
+                        <li class="nav-item">
+                            <a href="institucional.html" class="nav-link text-white">Institucional</a>
+                        </li>                     
+                        <li class="nav-item">
+                            <a href="contactos.html" class="nav-link text-white">Contacto</a>
+                        </li>                     
+                        <li class="nav-item">
+                            <a href="mascotas.html" class="nav-link text-white">Mascotas</a>
+                        </li>                     
+                        <li class="nav-item">
+                            <a href="veterinarios.html" class="nav-link text-white">Veterinarios</a>
+                        </li>                 
+                    </ul>             
+                </div>         
+            </nav>     
+        </header>      
+<!-- CONTENIDO PRINCIPAL -->     
+    <main class="overflow-hidden py-4">         
+        <section class="container">              
+            <h1 class="titulo-veterinario titulo-principal text-center mt-4 mb-4">
+                Gestión de Veterinarios
+            </h1>              
+    <!-- Formulario de Registro de veterinarios -->             
+            <div class="row justify-content-center">                 
+                <article class="col-12 col-lg-10">                     
+                    <form id="formularioVeterinario" class="row g-3 p-4 rounded-4 ">                         
+                        <h2 class="col-12 ">
+                            Registrar Profesional
+                        </h2>                          
+                        <div class="col-12 col-md-6">                             
+                            <label for="matricula" class="form-label fw-semibold">Matrícula *</label>                             
+                            <input type="number" class="form-control" id="matricula" name="matricula" placeholder="Ej: 1234" min="1" required>                         
+                        </div>                          
+                        <div class="col-12 col-md-6">                             
+                            <label for="nombre" class="form-label fw-semibold">Nombre y Apellido *</label>                             
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Dr. Gaspar Olivie" required>                         
+                        </div>                          
+                        <div class="col-12 col-md-6">                             
+                            <label for="especializacion" class="form-label fw-semibold">Especialización *</label>                             
+                            <select class="form-select" id="especializacion" name="especializacion" required>                                 
+                                <option value="" selected disabled>Seleccionar opción</option>                                 
+                                <option value="Médico Veterinario Clínico">Médico Veterinario Clínico</option>                                 
+                                <option value="Cirujana Veterinario">Cirugía Veterinaria</option>                                 
+                                <option value="Ecografista">Ecografía y Diagnóstico</option>                                 
+                                <option value="Patología Clínica">Patología Clínica</option>                                 
+                                <option value="Estilista Canino y Felino">Estética y Peluquería</option>                             
+                            </select>                         
+                        </div>                          
+                        <div class="col-12 col-md-6">                             
+                            <label for="valorConsulta" class="form-label fw-semibold">Valor de Consulta ($) *</label>                             
+                            <input type="number" class="form-control" id="valorConsulta" name="valorConsulta" step="0.01" min="0" placeholder="Ej: 35000" required>                         
+                        </div>                          
+                        <div class="col-12 mt-4 text-end">                             
+                            <button type="submit" class="btn btn-primary ">Registrar Veterinario</button>                         
+                        </div>                     
+                    </form>                 
+                </article>             
+            </div>            
+
+        <!-- Tabla de Listado -->             
+            <section class="mt-5 py-3 tabla tabla-veterinarios">                 
+                <h2 class="fw-bold mb-3 titulo-veterinario">                     
+                    Veterinarios Registrados                     
+                    <span id="totalVeterinarios" class="ms-2 badge rounded-pill">0</span>                 
+                </h2>                  
+        <!-- Filtro de Búsqueda -->                 
+                <div class="card mb-3 ">                     
+                    <div class="card-body">                         
+                        <label for="buscadorVeterinarios" class="form-label ">
+                            Buscar profesional
+                        </label>                         
+                        <input type="search" class="form-control" id="buscadorVeterinarios" placeholder="Buscar por nombre, matrícula o especialización...">                     
+                    </div>                 
+                </div>                  
+        <!-- Tabla Responsive -->                 
+                <div class="table-responsive card rounded-4 shadow-sm p-3">                     
+                    <table class="table table-bordered table-hover align-middle mb-0">                         
+                        <thead class="table-light">                             
+                            <tr>                                 
+                                <th>Matrícula</th>                                 
+                                <th>Nombre</th>                                 
+                                <th>Especialización</th>                                 
+                                <th>Valor Consulta</th>                                 
+                                <th class="text-center">Acciones</th>                             
+                            </tr>                         
+                        </thead>                         
+                            <tbody id="tablaVeterinarios">                             
+            <!-- Filas generadas dinámicamente -->                         
+                            </tbody>                     
+                        </table>                 
+                        </div>             
+            </section>          
+        </section>     
+    </main>      
+<!-- FOOTER -->     
+    <footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">         
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">             
+            <div class="text-center text-md-start">                 
+                <span class="fs-4 fw-bold d-block">La Mary</span>                 
+                <p class="fst-italic my-1 opacity-75">"Ciencia, medicina y cariño para asegurar la vida de tu compañero"</p>                 
+                <p class="small mb-0 opacity-75">Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br>Lunes a sábado. Urgencias 24hs</p>             
+            </div>             
+            <div class="text-center text-md-end">                 
+                <span class="fw-bold d-block mb-2">Seguinos</span>                 
+                <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap">                     
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Instagram</a>                     
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Facebook</a>                     
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a>                     
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">TikTok</a>                 
+                </div>             
+            </div>         
+        </div>     
+    </footer>      
+    <!-- MODAL EDITAR VETERINARIO -->     
+        <div class="modal fade" id="modalEditarVeterinario" tabindex="-1" aria-hidden="true">         
+        <div class="modal-dialog modal-dialog-centered">             
+            <div class="modal-content">                 
+                <div class="modal-header">                     
+                    <h2 class="modal-title fs-5 fw-bold">Editar Profesional</h2>                     
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>                 
+                </div>                 
+                <div class="modal-body">                     
+                    <form id="formularioEditarVeterinario" class="d-flex flex-column gap-3">                         
+                        <input type="hidden" id="editarIdVeterinario">                          
+                        <div>                             
+                            <label for="editarMatricula" class="form-label fw-semibold">Matrícula</label>                             
+                            <input type="number" class="form-control" id="editarMatricula" required>                         
+                        </div>                         
+                        <div>                             
+                            <label for="editarNombre" class="form-label fw-semibold">Nombre y Apellido</label>                             
+                            <input type="text" class="form-control" id="editarNombre" required>                         
+                        </div>                         
+                        <div>                             
+                            <label for="editarEspecializacion" class="form-label fw-semibold">Especialización</label>                             
+                            <select class="form-select" id="editarEspecializacion" required>                                 
+                                <option value="Médico Veterinario Clínico">Médico Veterinario Clínico</option>                                 
+                                <option value="Cirujana Veterinario">Cirugía Veterinaria</option>                                 
+                                <option value="Ecografista">Ecografía y Diagnóstico</option>                                 
+                                <option value="Patología Clínica">Patología Clínica</option>                                 
+                                <option value="Estilista Canino y Felino">Estética y Peluquería</option>                             
+                            </select>                         
+                        </div>                         
+                        <div>                             
+                            <label for="editarValorConsulta" class="form-label fw-semibold">Valor Consulta ($)</label>                             
+                            <input type="number" class="form-control" id="editarValorConsulta" step="0.01" required>                         
+                        </div>                          
+                        <div class="d-flex justify-content-end gap-2 mt-2">                             
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                             
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>                         
+                        </div>                     
+                    </form>                 
+                </div>             
+            </div>         
+        </div>     
+    </div>      
+    <!-- MODAL CONFIRMAR ELIMINACIÓN -->     
+        <div class="modal fade" id="modalEliminarVeterinario" tabindex="-1" aria-hidden="true">         
+        <div class="modal-dialog modal-dialog-centered">             
+            <div class="modal-content">                 
+                <div class="modal-header">                     
+                    <h2 class="modal-title fs-5 fw-bold">Eliminar Veterinario</h2>                     
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>                 
+                </div>                 
+            <div class="modal-body">                     
+                    ¿Está seguro de que desea eliminar a este profesional del registro?                 
+                </div>                 
+                <div class="modal-footer">                     
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                     
+                    <button type="button" class="btn btn-danger" id="confirmarEliminarBtn">Eliminar</button>                 
+                </div>             
+            </div>         
+        </div>     
+    </div>  
+    </body> 
+</html> 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Veterinaria La Mary</title>
+
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./estilos/basico.css">
+    <link rel="stylesheet" href="./estilos/base.css">
+
+    <!-- scripts -->
+    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/authGuard.js"></script>
+    <script defer src="./js/login.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <!-- HEADER -->
+    <header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid">
+            <a href="./index.html" class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none">
+                <img src="./assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50" class="img-fluid object-fit-contain">
+                <div>
+                    <h1 class="h4 mb-0 fw-bold">La Mary</h1>
+                    <h2 class="h6 mb-0 text-uppercase opacity-75" style="font-size: 0.75rem;">Clínica Veterinaria</h2>
+                </div>
+            </a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul class="navbar-nav gap-2 text-center" id="navLinks">
+                    <!-- El script authGuard.js renderiza las opciones dinámicamente -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="d-flex align-items-center justify-content-center flex-grow-1 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-lg rounded-4 p-4 bg-white">
+                        <div class="text-center mb-4">
+                            <img src="./assets/imagen/logo1.png" alt="Logo" width="70" class="mb-2">
+                            <h2 class="h4 fw-bold text-dark">Acceso Administrador</h2>
+                            <p class="text-muted small">Ingresá tus credenciales para gestionar el sistema</p>
+                        </div>
+
+                        <!-- Alerta de Error -->
+                        <div id="alertaError" class="alert alert-danger d-none py-2 small text-center" role="alert">
+                            Usuario o contraseña incorrectos.
+                        </div>
+
+                        <form id="formularioLogin">
+                            <div class="mb-3">
+                                <label for="username" class="form-label fw-semibold small">Usuario *</label>
+                                <input type="text" class="form-control rounded-3" id="username" placeholder="Ej: emilys" required>
+                                <div class="form-text text-muted extra-small">Usuario de prueba DummyJSON: <code>emilys</code></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fw-semibold small">Contraseña *</label>
+                                <input type="password" class="form-control rounded-3" id="password" placeholder="••••••••" required>
+                                <div class="form-text text-muted extra-small">Clave de prueba DummyJSON: <code>emilyspass</code></div>
+                            </div>
+
+                            <button type="submit" id="btnIngresar" class="btn btn-primary w-100 py-2 fw-bold rounded-3">
+                                Iniciar Sesión
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="text-center text-md-start">
+                <span class="fs-4 fw-bold d-block">La Mary</span>
+                <p class="fst-italic my-1 opacity-75">"Ciencia, medicina y cariño para asegurar la vida de tu compañero"</p>
+                <p class="small mb-0 opacity-75">Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br>Lunes a sábado. Urgencias 24hs</p>
+            </div>
+            <div class="text-center text-md-end">
+                <span class="fw-bold d-block mb-2">Seguinos</span>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap">
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Instagram</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">Facebook</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a>
+                    <a href="#" target="_blank" class="text-white text-decoration-none link-light">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

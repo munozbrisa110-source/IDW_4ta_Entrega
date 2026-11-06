@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institucional | Veterinaria La Mary</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./estilos/basico.css">
+    <link rel="stylesheet" href="./estilos/base.css">
+    <link rel="stylesheet" href="./estilos/institucional.css">
+
+    <!-- Scripts JS -->
+    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sesion.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100"
+
+<!-- HEADER RESPONSIVO CON BOOTSTRAP -->
+<header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid"> <!-- Logo y Marca --> <a href="index.html"
+            class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none"> <img
+                src="assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50"
+                class="img-fluid object-fit-contain">
+            <div>
+                <h1 class="h4 mb-0 fw-bold">La Mary</h1>
+                <h2 class="h6 mb-0 text-uppercase opacity-75">Clínica Veterinaria</h2>
+            </div>
+        </a> <!-- Boton Menu Hamburguesa --> <button class="navbar-toggler border-white" type="button"
+            data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion"
+            aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <!-- Menú Colapsable -->
+        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+            <ul class="navbar-nav gap-2 gap-lg-3 text-center mt-3 mt-lg-0">
+                <li class="nav-item"> <a href="index.html" class="nav-link text-white">Inicio</a> </li>
+                <li class="nav-item"> <a href="institucional.html" class="nav-link text-white">Institucional</a> </li>
+                <li class="nav-item"> <a href="contactos.html" class="nav-link text-white">Contacto</a> </li>
+                <li class="nav-item"> <a href="mascotas.html" class="nav-link text-white">Mascotas</a> </li>
+                <li class="nav-item"> <a href="veterinarios.html" class="nav-link text-white">Veterinarios</a> </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+    <!-- Contenido principal -->
+    <main class="institucional py-4">
+
+        <!-- Título principal -->
+        <section class="container py-4 px-5">
+            <article class="text-center">
+                <h1 class="titulo-institucional">
+                    Información Institucional
+                </h1>
+            </article>
+        </section>
+
+
+        <!-- Sobre nosotros -->
+        <section class="container-fluid py-4 px-5">
+            <div class="row align-items-center g-3 mx-auto sobre-nosotros-contenido">
+
+                <article class="col-12 col-md-6 d-flex align-items-start flex-column texto-sobre-nosotros">
+                    <h2>Sobre nosotros</h2>
+                    <p>
+                        Veterinaria La Mary nació en 2016 con el compromiso de brindar atención veterinaria de calidad y
+                        acompañar a las familias en el cuidado y bienestar de sus mascotas.
+                    </p>
+
+                    <p>
+                        Somos una clínica veterinaria dedicada a la atención de pequeños animales. Contamos con un
+                        equipo de profesionales comprometidos con la salud y el bienestar de cada paciente, ofreciendo
+                        una atención cercana, responsable y basada en el respeto y el amor por los animales.
+                    </p>
+
+                    <p>
+                        Desde nuestros comienzos, seguimos creciendo junto a nuestros pacientes y sus familias,
+                        manteniendo siempre el mismo compromiso: cuidar su salud y mejorar su calidad de vida.
+                    </p>
+                </article>
+
+                <article class="col-12 col-md-6 text-center">
+                    <img src="assets/imagen/imgInstitucional.jpg" alt="Imagen de la veterinaria"
+                        class="img-fluid imagen-institucional">
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Misión y visión -->
+        <section class="container-fluid py-4 px-5 mision-vision">
+            <article class="container">
+                <div class="d-flex flex-column gap-4">
+
+                    <article class="bloque-institucional p-4 rounded-4 shadow-sm">
+                        <h2>Nuestra misión</h2>
+                        <p class="mb-0">
+                            Brindar atención veterinaria integral y de calidad,
+                            priorizando la salud, el bienestar y la calidad de vida
+                            de cada paciente, mediante un trato profesional,
+                            responsable y comprometido.
+                        </p>
+                    </article>
+
+                    <article class="bloque-institucional p-4 rounded-4 shadow-sm ms-auto">
+                        <h2>Nuestra visión</h2>
+                        <p class="mb-0">
+                            Ser una clínica veterinaria reconocida por la calidad
+                            de su atención, el profesionalismo de su equipo y el
+                            compromiso con el bienestar de los animales y sus familias.
+                        </p>
+                    </article>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- Valores -->
+        <section class="container-fluid py-4 px-5 valores">
+            <article class="text-center">
+                <h2>Nuestros valores</h2>
+            </article>
+
+            <article class="container text-center">
+                <div class="row justify-content-center g-4">
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card card-valor h-100 p-4 border-0 rounded-4 shadow-sm">
+                            <div class="icono-valor fs-1 mb-3">
+                                💜
+                            </div>
+                            <h3>Compromiso</h3>
+                            <p>
+                                Trabajamos con responsabilidad y dedicación
+                                en cada atención.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card card-valor h-100 p-4 border-0 rounded-4 shadow-sm">
+                            <div class="icono-valor fs-1 mb-3">
+                                🐾
+                            </div>
+                            <h3>Respeto</h3>
+                            <p>
+                                Promovemos un trato respetuoso y cuidadoso
+                                hacia cada animal.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card card-valor h-100 p-4 border-0 rounded-4 shadow-sm">
+                            <div class="icono-valor fs-1 mb-3">
+                                ⭐
+                            </div>
+                            <h3>Profesionalismo</h3>
+                            <p>
+                                Brindamos una atención basada en conocimientos
+                                y responsabilidad.
+                            </p>
+                        </article>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- Instalaciones -->
+        <section class="container-fluid py-4 px-5 instalaciones">
+            <article class="text-center">
+                <h2>Nuestras Instalaciones</h2>
+                <p class="subtitulo-seccion">
+                    Espacios cómodos y equipados con tecnología moderna para el cuidado
+                    de tu mascota.
+                </p>
+            </article>
+
+            <article class="container">
+                <div class="row justify-content-center g-4">
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <figure class="foto-galeria h-100 mb-0">
+                            <img src="assets/imagen/consultorio.jpg" alt="Consultorio veterinario"
+                                class="img-fluid w-100 rounded-top-4">
+                            <figcaption class="text-center bg-white p-3 rounded-bottom-4 fw-medium">
+                                Consultorios Modernos
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <figure class="foto-galeria h-100 mb-0">
+                            <img src="assets/imagen/cirugia.png" alt="Quirófano veterinario"
+                                class="img-fluid w-100 rounded-top-4">
+                            <figcaption class="text-center bg-white p-3 rounded-bottom-4 fw-medium">
+                                Quirófano Equipado
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <figure class="foto-galeria h-100 mb-0">
+                            <img src="assets/imagen/recepcion.png" alt="Recepción y sala de espera"
+                                class="img-fluid w-100 rounded-top-4">
+                            <figcaption class="text-center bg-white p-3 rounded-bottom-4 fw-medium">
+                                Recepción y Sala de Espera
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+
+        <!-- Testimonios -->
+        <section class="container-fluid py-4 px-5 testimonios">
+            <article class="text-center">
+                <h2>Lo que dicen nuestros clientes</h2>
+            </article>
+            <div class="container">
+                <div class="row justify-content-center g-4">
+
+                    <!-- Testimonio 1 -->
+                    <div class="col-12 col-md-6 col-xl-5">
+                        <article class="card-testimonio h-100 p-3 rounded-4 d-flex flex-column">
+                            <div class="estrellas fs-6 mb-3">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <p class="texto-testimonio fst-italic mb-3">
+                                "Excelente atención con mi perrito. Súper responsables y amorosos."
+                            </p>
+                            <h4 class="autor-testimonio m-0 fs-6 fw-semibold mt-auto">
+                                Camilo
+                                <span class="mascota fw-normal fs-6">
+                                    (Dueño de Rocco 🐾)
+                                </span>
+                            </h4>
+                        </article>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div class="col-12 col-md-6 col-xl-5">
+                        <article class="card-testimonio h-100 p-3 rounded-4 d-flex flex-column">
+                            <div class="estrellas fs-6 mb-3">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <p class="texto-testimonio fst-italic mb-3">
+                                "Mi michi suele estresarse mucho en el veterinario, pero acá lo trataron con una
+                                paciencia increíble."
+                            </p>
+                            <h4 class="autor-testimonio m-0 fs-6 fw-semibold mt-auto">
+                                Valeria
+                                <span class="mascota fw-normal fs-6">
+                                    (Dueña de Oliver 🐱)
+                                </span>
+                            </h4>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas frecuentes -->
+        <section class="container-fluid py-4 px-5 preguntas-frecuentes">
+
+            <article class="text-center">
+                <h2>Preguntas Frecuentes</h2>
+            </article>
+
+            <article class="container">
+                <div class="d-flex flex-column gap-3">
+
+                    <!-- Pregunta 1 -->
+                    <details class="item-faq rounded-3 overflow-hidden">
+                        <summary class="fw-semibold p-3">
+                            ¿Es necesario sacar turno previo o atienden por orden de llegada?
+                        </summary>
+                        <div class="respuesta-faq px-3 pb-3">
+                            <p>
+                                Para consultas generales, estéticas o cirugías programadas,
+                                recomendamos <a href="./contactos.html" class="link-primary">solicitar turno</a>
+                                previo para evitar esperas y estrés de tu mascota.
+                                Las urgencias médicas se atienden de inmediato sin necesidad de turno.
+                            </p>
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 2 -->
+                    <details class="item-faq rounded-3 overflow-hidden">
+                        <summary class="fw-semibold p-3">
+                            ¿Qué tipo de animales atienden en la clínica?
+                        </summary>
+                        <div class="respuesta-faq px-3 pb-3">
+                            <p>
+                                En Veterinaria La Mary nos especializamos exclusivamente en la
+                                atención de pequeños animales, principalmente perros y gatos de
+                                todas las razas y tamaños.
+                            </p>
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 3 -->
+                    <details class="item-faq rounded-3 overflow-hidden">
+                        <summary class="fw-semibold p-3">
+                            ¿Atienden urgencias fuera del horario comercial?
+                        </summary>
+                        <div class="respuesta-faq px-3 pb-3">
+                            <p>
+                                Contamos con un servicio de guardia para emergencias. Si tienes
+                                una situación crítica con tu mascota, te sugerimos llamarnos
+                                previamente al teléfono de contacto para tener al equipo
+                                preparado a tu llegada.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+<!-- FOOTER -->
+<footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <!-- Marca, Lema y Dirección -->
+        <div class="text-center text-md-start"> <span class="fs-4 fw-bold d-block">La Mary</span>
+            <p class="fst-italic my-1 opacity-75"> "Ciencia, medicina y cariño para asegurar la vida de tu compañero"
+            </p>
+            <p class="small mb-0 opacity-75"> Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br> Lunes a sábado.
+                Urgencias 24hs </p>
+        </div> <!-- Redes Sociales -->
+        <div class="text-center text-md-end"> <span class="fw-bold d-block mb-2">Seguinos</span>
+            <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap"> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">Instagram</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">Facebook</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">TikTok</a> </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

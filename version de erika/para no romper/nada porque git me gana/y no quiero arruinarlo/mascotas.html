@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/basico.css">
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/mascotas.css">
+    <title>Gestión de Mascotas</title>
+   
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sesion.js"></script>
+    <script defer src="./js/mascotas.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER RESPONSIVO CON BOOTSTRAP -->
+    <header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid">
+            <!-- Logo y Marca -->
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none"> <img
+                    src="assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50"
+                    class="img-fluid object-fit-contain">
+                <div>
+                    <h1 class="h4 mb-0 fw-bold">La Mary</h1>
+                    <h2 class="h6 mb-0 text-uppercase opacity-75">Clínica Veterinaria</h2>
+                </div>
+            </a>
+            <!-- Boton Menu Hamburguesa -->
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+                aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+                <!-- Menú Colapsable -->
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul class="navbar-nav gap-2 gap-lg-3 text-center mt-3 mt-lg-0">
+                    <li class="nav-item"> <a href="index.html" class="nav-link text-white">Inicio</a> </li>
+                    <li class="nav-item"> <a href="institucional.html" class="nav-link text-white">Institucional</a> </li>
+                    <li class="nav-item"> <a href="contactos.html" class="nav-link text-white">Contacto</a> </li>
+                    <li class="nav-item"> <a href="mascotas.html" class="nav-link text-white">Mascotas</a> </li>
+                    <li class="nav-item"> <a href="veterinarios.html" class="nav-link text-white">Veterinarios</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- contenido principal de la página mascotas  -->
+    <main>
+        <section class="container">
+
+            <h1 class="titulo-mascotas titulo-principal text-center mt-5 mb-5">
+                Gestión de Mascotas
+            </h1>
+
+            <!-- Formulario de registro de mascotas -->
+            <div class="row justify-content-center">
+                <article class="col-12 col-lg-10">
+                    <form id="formularioMascota" class="row g-3 p-4 rounded-4">
+
+                        <h2 class="col-12">Registrar mascota</h2>
+
+                        <div class="col-12 col-md-6">
+                            <label for="nombreDuenio" class="form-label">Nombre del dueño</label>
+                            <input type="text" class="form-control" id="nombreDuenio" name="nombreDuenio" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="nombreMascota" class="form-label">Nombre de la mascota</label>
+                            <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="color" class="form-label">Color</label>
+                            <input type="text" class="form-control" id="color" name="color" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="edad" name="edad" min="0" max="30" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="peso" class="form-label">Peso (kg)</label>
+                            <input type="number" class="form-control" id="peso" name="peso" min="0" step="0.01"
+                                placeholder="Ejemplo 4.5" required>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="imagen" class="form-label">Foto de la mascota (opcional)</label>
+                            <input type="file" class="form-control" id="imagen" name="imagen" accept=".png,.jpg,.jpeg">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Registrar mascota</button>
+                        </div>
+
+                    </form>
+                </article>
+            </div>
+
+
+            <!-- Tabla para listar mascotas -->
+            <section class="mt-5 py-5 tabla tabla-mascotas">
+
+                <!-- Título y total -->
+                <h2 class="titulo-mascotas mb-3">
+                    Mascotas registradas
+                    <span id="totalMascotas" class="ms-2 badge rounded-pill">0</span>
+                </h2>
+
+                <!-- Tarjeta del filtro -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <label for="buscadorMascotas" class="form-label">
+                            Buscar mascota
+                        </label>
+                        <input type="search" class="form-control" id="buscadorMascotas" placeholder="Buscar por mascota o dueño">
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Tabla -->
+                <div class="table-responsive rounded border">
+                    <table class="table table-bordered align-middle m-0">
+                        <thead>
+                            <tr>
+                                <th>Dueño</th>
+                                <th>Mascota</th>
+                                <th>Color</th>
+                                <th>Edad</th>
+                                <th>Peso</th>
+                                <th>Foto</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaMascotas">
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </section>
+
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <!-- Marca, Lema y Dirección -->
+            <div class="text-center text-md-start"> <span class="fs-4 fw-bold d-block">La Mary</span>
+                <p class="fst-italic my-1 opacity-75"> "Ciencia, medicina y cariño para asegurar la vida de tu compañero"
+                </p>
+                <p class="small mb-0 opacity-75"> Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br> Lunes a sábado.
+                    Urgencias 24hs </p>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="text-center text-md-end"> <span class="fw-bold d-block mb-2">Seguinos</span>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap"> <a href="#"
+                        target="_blank" class="text-white text-decoration-none link-light">Instagram</a> <a href="#"
+                        target="_blank" class="text-white text-decoration-none link-light">Facebook</a> <a href="#"
+                        target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a> <a href="#"
+                        target="_blank" class="text-white text-decoration-none link-light">TikTok</a> </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Modal para editar las mascotas -->
+    <div class="modal fade" id="modalEditarMascota" tabindex="-1" aria-labelledby="tituloEditarMascota" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloEditarMascota">
+                        Editar mascota
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="formularioEditarMascota" class="d-flex flex-column gap-3">
+
+                        <div>
+                            <label for="editarNombreDuenio" class="form-label">Nombre del dueño</label>
+                            <input type="text" class="form-control" id="editarNombreDuenio" name="editarNombreDuenio" required>
+                        </div>
+
+                        <div>
+                            <label for="editarNombreMascota" class="form-label">Nombre de la mascota</label>
+                            <input type="text" class="form-control" id="editarNombreMascota" name="editarNombreMascota" required>
+                        </div>
+
+                        <div>
+                            <label for="editarColor" class="form-label">Color</label>
+                            <input type="text" class="form-control" id="editarColor" name="editarColor" required>
+                        </div>
+
+                        <div>
+                            <label for="editarEdad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="editarEdad" name="editarEdad" min="0" max="20" required>
+                        </div>
+
+                        <div>
+                            <label for="editarPeso" class="form-label">Peso (kg)</label>
+                            <input type="number" class="form-control" id="editarPeso" name="editarPeso" min="0" step="0.01" placeholder="Ejemplo 4.5" required>
+                        </div>
+
+                        <div>
+                            <label for="editarImagen" class="form-label">Cambiar foto (opcional)</label>
+                            <input type="file" class="form-control" id="editarImagen" name="editarImagen" accept=".png,.jpg,.jpeg">
+
+                            <small class="text-secondary">Si no elige otra foto, se conserva la actual.</small>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 mt-2">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para confirmar la eliminación -->
+    <div class="modal fade" id="modalEliminarMascota" tabindex="-1" aria-labelledby="tituloEliminarMascota"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloEliminarMascota">
+                        Eliminar mascota
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    ¿Está seguro de querer eliminar esta mascota?
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-danger" id="confirmarEliminarMascota">
+                        Eliminar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar mensajes -->
+    <div class="modal fade" id="modalMensaje" tabindex="-1" aria-labelledby="tituloMensaje" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloMensaje">
+                        Operación realizada
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body" id="mensajeGuardado">
+                    Los datos se guardaron correctamente.
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        Aceptar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
