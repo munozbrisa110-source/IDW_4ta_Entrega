@@ -1,0 +1,60 @@
+/* Título principal */
+.titulo-turnos {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+    font-weight: 800;
+}
+
+.titulo-principal::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--color-violeta-oscuro3);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+
+/* Formulario y tarjeta de filtro */
+#formularioTurno,
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#formularioTurno h2 {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+
+/* Etiquetas de los formularios */
+#formularioTurno.form-label,
+.tabla, .form-label {
+    color: var(--color-violeta-oscuro2);
+    font-weight: 600;
+}
+
+/* Botón de registro */
+#formularioTurno .btn-primary {
+    background-color: var(--color-violeta-oscuro3);
+    border-color: var(--color-violeta-oscuro3);
+}
+
+/* Número total de turnos */
+#totalTurnos {
+    background-color: var(--color-violeta-oscuro3);
+    color: var(--color-violeta-claro1);
+}
+
+/* Tabla de turnos */
+main {
+    min-width: 0;
+}
+
+#tablaTurnos table {
+    min-width: 700px;
+}
+
+#tablaTurnos td {
+    padding-block: 0.25rem;
+}
