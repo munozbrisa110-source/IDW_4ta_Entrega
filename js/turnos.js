@@ -1,3 +1,7 @@
+if (!estaLogueado()) {
+    window.location.href = 'login.html'
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("formularioTurno");
     const selectMascota = document.getElementById("selectMascota");

@@ -1,3 +1,7 @@
+if (!estaLogueado()) {
+    window.location.href = 'login.html'
+}
+
 const mascotas = JSON.parse(localStorage.getItem("mascotas")) || [];
 
 const tablaMascotas = document.getElementById("tablaMascotas");
