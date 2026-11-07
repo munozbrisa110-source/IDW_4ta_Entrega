@@ -10,5 +10,5 @@ const historias = JSON.parse(localStorage.getItem('historiasClinicas')) || [];
 document.getElementById('nombre-usuario').textContent = sessionStorage.getItem('usuario');
 document.getElementById('total-mascotas').textContent = mascotas.length + ' registradas';
 document.getElementById('total-veterinarios').textContent = veterinarios.length + ' registrados';
-//document.getElementById('total-historias').textContent = turnos.length + ' registrados';
+document.getElementById('total-turnos').textContent = turnos.length + ' registrados';
 document.getElementById('total-historias').textContent = historias.length + ' registrados';
