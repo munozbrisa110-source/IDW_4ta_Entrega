@@ -4,7 +4,7 @@ if (!estaLogueado()) {
 
 const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
 const veterinarios = JSON.parse(localStorage.getItem('veterinarios')) || [];
-//const turnos = JSON.parse(localStorage.getItem('turnos')) || [];
+const turnos = JSON.parse(localStorage.getItem('turnos')) || [];
 const historias = JSON.parse(localStorage.getItem('historiasClinicas')) || [];
 
 document.getElementById('nombre-usuario').textContent = sessionStorage.getItem('usuario');
