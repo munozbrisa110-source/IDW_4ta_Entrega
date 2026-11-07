@@ -77,3 +77,15 @@ main{
 .mapa iframe{
     box-shadow: 0 4px 12px var(--color-violeta-oscuro3);
 }
+
+/* Estilos para el botón de inicio desesión */
+.boton-container {
+    background-color: var(--color-violeta-claro1);
+    color: var(--color-violeta-oscuro3);
+    font-family: var(--font-principal);
+    font-weight: 700;
+}
+.boton-container:hover,
+.boton-container:focus {
+    opacity: 0.85;
+}
