@@ -1,0 +1,36 @@
+main {
+    min-width: 0;
+}
+
+.titulo-panel {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+
+.texto-panel,
+.card-modulo .card-text {
+    font-family: var(--font-titulo2);
+    color: var(--color-violeta-oscuro1);
+}
+
+.badge-panel {
+    background-color: var(--color-violeta-oscuro3);
+    color: var(--color-violeta-claro1);
+}
+
+.card-modulo {
+    background-color: var(--color-violeta-claro1);
+    box-shadow: 0 1px 1.2rem var(--color-violeta-oscuro3);
+  
+}
+
+
+.card-modulo .btn.btn-panel {
+    background-color: var(--color-violeta-oscuro3);
+    border-color: var(--color-violeta-oscuro3);
+}
+
+.card-modulo .btn.btn-panel:active {
+    opacity: 0.85;
+}
+

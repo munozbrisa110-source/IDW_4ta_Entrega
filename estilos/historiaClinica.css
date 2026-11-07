@@ -1,0 +1,113 @@
+/* Título principal */
+.titulo-historia {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+    font-weight: 800;
+}
+ 
+.titulo-principal::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--color-violeta-oscuro3);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+ 
+/* Formulario y tarjeta de filtro */
+#formularioHistoria,
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+ 
+#formularioHistoria h2 {
+    font-family: var(--font-principal);
+    color: var(--color-violeta-oscuro3);
+}
+ 
+/* Etiquetas de los formularios */
+#formularioHistoria .form-label,
+.tabla .form-label {
+    color: var(--color-violeta-oscuro2);
+    font-weight: 600;
+}
+ 
+/* Botones violetas: registro, exportar y comprobante */
+#formularioHistoria .btn-primary,
+#botonExportarHC,
+.tabla-historia .btn.btn-primary {
+    background-color: var(--color-violeta-oscuro3);
+    border-color: var(--color-violeta-oscuro3);
+}
+ 
+/* Número total de entradas */
+#totalHistorias {
+    background-color: var(--color-violeta-oscuro3);
+    color: var(--color-violeta-claro1);
+}
+ 
+/* Tabla de historia clínica */
+main {
+    min-width: 0;
+}
+ 
+.tabla-historia table,
+#modalHistorial table {
+    min-width: 900px;
+}
+ 
+/* */
+.tabla-historia table th,
+#modalHistorial table th {
+    text-align: center;
+    vertical-align: middle;
+}
+ 
+.tabla-historia table td,
+#modalHistorial table td {
+    text-align: left;
+    vertical-align: middle;
+}
+ 
+.tabla-historia table td:not(.observaciones-hc),
+#modalHistorial table td:not(.observaciones-hc) {
+    white-space: nowrap;
+}
+ 
+.observaciones-hc {
+    min-width: 250px;
+}
+ 
+.tabla-historia td {
+    padding-block: 0.25rem;
+}
+ 
+/* Botón "Ver historial" de la tabla */
+.tabla-historia table .btn {
+    min-width: 100px;
+    white-space: nowrap; /* el texto del botón queda en un solo renglón */
+}
+ 
+/* Respeta los saltos de línea que escribe el veterinario */
+.observaciones-hc {
+    white-space: pre-line;
+}
+ 
+/* Total de atenciones dentro del modal del historial */
+.total-historial {
+    background-color: var(--color-violeta-oscuro3);
+    color: var(--color-violeta-claro1);
+}
+ 
+ 
+/* Mensaje de tabla vacía centrado */
+.tabla-historia table td[colspan],
+#modalHistorial table td[colspan] {
+    text-align: center;
+}
+ 
+ 
+ 
+ 
+ 

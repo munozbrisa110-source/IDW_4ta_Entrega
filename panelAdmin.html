@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/basico.css">
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/panelAdmin.css">
+    <title>Veterinaria La Mary</title>
+
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/sesion.js"></script>
+    <script defer src="./js/panelAdmin.js"></script>
+
+</head>
+
+<body>
+
+<!-- HEADER RESPONSIVO CON BOOTSTRAP -->
+<header style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 container-fluid"> <!-- Logo y Marca --> <a href="index.html"
+            class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none"> <img
+                src="assets/imagen/logo1.png" alt="Logo La Mary" width="50" height="50"
+                class="img-fluid object-fit-contain">
+            <div>
+                <h1 class="h4 mb-0 fw-bold">La Mary</h1>
+                <h2 class="h6 mb-0 text-uppercase opacity-75">Clínica Veterinaria</h2>
+            </div>
+        </a> <!-- Boton Menu Hamburguesa --> <button class="navbar-toggler border-white" type="button"
+            data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion"
+            aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <!-- Menú Colapsable -->
+        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+            <ul class="navbar-nav gap-2 gap-lg-3 text-center mt-3 mt-lg-0">
+                <li class="nav-item"> <a href="index.html" class="nav-link text-white">Inicio</a> </li>
+                <li class="nav-item"> <a href="institucional.html" class="nav-link text-white">Institucional</a> </li>
+                <li class="nav-item"> <a href="contactos.html" class="nav-link text-white">Contacto</a> </li>
+                <li class="nav-item"> <a href="panelAdmin.html" class="nav-link text-white">Panel</a></li>
+
+                <li>
+                    <button class="btn btn-secondary rounded-2 px-3 py-2 border-0" onclick="cerrarSesion()">
+                        Cerrar sesión
+                    </button>
+                </li>
+            
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="py-4">
+    <section class="container py-5">
+
+        <span class="badge rounded-pill badge-panel fw-semibold">PANEL ADMIN</span>
+        <h2 class="titulo-panel fs-1 fw-semibold mt-2">Hola, <span id="nombre-usuario"></span></h2>
+        <p class="texto-panel mb-4">Elegí un módulo para gestionar.</p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+            <article class="col">
+                <div class="card card-modulo h-100">
+                    <div class="card-body d-flex flex-column gap-2">
+                        <h3 class="titulo-panel card-title fs-4">Mascotas</h3>
+                        <p class="card-text">Alta, edición y baja de mascotas.</p>
+                        <span class="badge badge-panel align-self-start" id="total-mascotas">0</span>
+                        <a href="mascotas.html" class="btn btn-primary btn-panel mt-auto">Ingresar</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col">
+                <div class="card card-modulo h-100">
+                    <div class="card-body d-flex flex-column gap-2">
+                        <h3 class="titulo-panel card-title fs-4">Veterinarios</h3>
+                        <p class="card-text">Gestión del equipo profesional.</p>
+                        <span class="badge badge-panel align-self-start" id="total-veterinarios">0</span>
+                        <a href="veterinarios.html" class="btn btn-primary btn-panel mt-auto">Ingresar</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col">
+                <div class="card card-modulo h-100">
+                    <div class="card-body d-flex flex-column gap-2">
+                        <h3 class="titulo-panel card-title fs-4">Turnos</h3>
+                        <p class="card-text">Agenda de turnos de la clínica.</p>
+                        <span class="badge text-bg-warning align-self-start">Próximamente</span>
+                        <a href="turnos.html" class="btn btn-primary btn-panel mt-auto">Ingresar</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col">
+                <div class="card card-modulo h-100">
+                    <div class="card-body d-flex flex-column gap-2">
+                        <h3 class="titulo-panel card-title fs-4">Historia Clínica</h3>
+                        <p class="card-text">Registro de consultas y tratamientos.</p>
+                        <span class="badge badge-panel align-self-start" id="total-historias">0</span>
+                        <a href="historiaClinica.html" class="btn btn-primary btn-panel mt-auto">Ingresar</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+</main>
+
+
+
+<!-- FOOTER -->
+<footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <!-- Marca, Lema y Dirección -->
+        <div class="text-center text-md-start"> <span class="fs-4 fw-bold d-block">La Mary</span>
+            <p class="fst-italic my-1 opacity-75"> "Ciencia, medicina y cariño para asegurar la vida de tu compañero"
+            </p>
+            <p class="small mb-0 opacity-75"> Gdor. Gral. Balcarce 327, Concordia, Entre Ríos.<br> Lunes a sábado.
+                Urgencias 24hs </p>
+        </div> <!-- Redes Sociales -->
+        <div class="text-center text-md-end"> <span class="fw-bold d-block mb-2">Seguinos</span>
+            <div class="d-flex gap-3 justify-content-center justify-content-md-end flex-wrap"> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">Instagram</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">Facebook</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">WhatsApp</a> <a href="#"
+                    target="_blank" class="text-white text-decoration-none link-light">TikTok</a> </div>
+        </div>
+    </div>
+</footer>
+
+ 
+
+</body>
+
+</html>

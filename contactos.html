@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="estilos/contactos.css">
 
     <title>Contactos | Veterinaria La Mary</title>
+
+    <script defer src="./js/sesion.js"></script>
+    <script defer src="./js/header.js"></script>
 </head>
 <body> 
  
@@ -43,18 +46,13 @@ align-items-center gap-3 text-white text-decoration-none">
           </li> 
           <li class="nav-item"> 
             <a href="contactos.html" class="nav-link text-white">Contacto</a> 
-          </li> 
-          <li class="nav-item"> 
-            <a href="mascotas.html" class="nav-link text-white">Mascotas</a>
-          </li> 
-          <li class="nav-item"> 
-            <a href="veterinarios.html" class="nav-link text-white">Veterinarios</a> 
-          </li> 
+          </li>  
         </ul> 
       </div> 
  
     </nav> 
   </header> 
+ 
  
   <!--CONTENIDO PRINCIPAL --> 
   <main class="py-5 pagina-contacto"> 
@@ -91,131 +89,47 @@ align-items-center gap-3 text-white text-decoration-none">
  
           <!-- Imagen --> 
           <div class="contacto-imagen text-center d-none d-lg-block"> 
-            <img src="assets/imagen/imagen09.jfif" alt="Imagen de contacto" class="img-fluid rounded-4 shadow-sm object-fit-cover w-100" style="max-height: 270px;"> 
+            <img src="./assets/imagen/imagen09.jfif" alt="Imagen de contacto" class="img-fluid rounded-4 shadow-sm object-fit-cover w-100" style="max-height: 270px;"> 
           </div> 
         </article> 
  
-        <!-- Tarjeta con Pestañas: Solicitar Turno / Consulta General --> 
-        <article class="col-12 col-lg-7 formulario-turno"> 
-          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white"> 
-            
-            <ul class="nav nav-pills nav-fill gap-2 mb-4 p-1 bg-light rounded-3" id="tabContacto" role="tablist"> 
-              <li class="nav-item" role="presentation"> 
-                <button class="nav-link active fw-bold rounded-3 btn btn-outline-dark px-4" id="tab-turno" data-bs-toggle="pill" data-bs-target="#panel-turno" type="button" role="tab" aria-controls="panel-turno" aria-selected="true"> 
-                  <i class="bi bi-calendar-check me-2"></i>Solicitar Turno 
-                </button> 
-              </li> 
-              <li class="nav-item" role="presentation"> 
-                <button class="nav-link fw-bold rounded-3 btn btn-outline-secondary px-4 " id="tab-consulta" data-bs-toggle="pill" data-bs-target="#panel-consulta" type="button" role="tab" aria-controls="panel-consulta" aria-selected="false"> 
-                  <i class="bi bi-chat-dots me-2"></i>Consulta General 
-                </button> 
-              </li> 
-            </ul> 
- 
-            <!-- Contenido de las Pestañas --> 
-            <div class="tab-content" id="contenidoTabsContacto"> 
-              
-              <!-- FORMULARIO PARA TURNO --> 
-              <div class="tab-pane fade show active" id="panel-turno" role="tabpanel" aria-labelledby="tab-turno"> 
-                <h2 class="titulo-principal fw-bold fs-4 mb-1">Reserva de Turno Médico</h2> 
-                <p class="text-muted small mb-3">Completá los datos a continuación para agendar la atención de tu mascota.</p> 
- 
-                <form action="#" method="POST" class="row g-3"> 
-                  <div class="col-12 col-md-6"> 
-                    <label for="nombre" class="form-label fw-semibold small mb-1">Nombre y Apellido *</label> 
-                    <input type="text" class="form-control rounded-3" id="nombre" name="nombre" placeholder="Ingresá tu nombre" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-6"> 
-                    <label for="telefono" class="form-label fw-semibold small mb-1">Teléfono / WhatsApp *</label> 
-                    <input type="tel" class="form-control rounded-3" id="telefono" name="telefono" placeholder="Ej: 3454123456" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-6"> 
-                    <label for="email" class="form-label fw-semibold small mb-1">Email *</label> 
-                    <input type="email" class="form-control rounded-3" id="email" name="email" placeholder="ejemplo@correo.com" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-6"> 
-                    <label for="mascota" class="form-label fw-semibold small mb-1">Nombre mascota *</label> 
-                    <input type="text" class="form-control rounded-3" id="mascota" name="mascota" placeholder="Nombre de tu mascota" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-4"> 
-                    <label for="especie" class="form-label fw-semibold small mb-1">Especie *</label> 
-                    <select class="form-select rounded-3" id="especie" name="especie" required> 
+        <!-- Formulario de contacto (solo de muestra, no envía datos) -->
+        <article class="col-12 col-lg-7 formulario-turno">
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
 
-                      <option value="" selected disabled>Seleccionar</option> 
+            <h2 class="titulo-principal fw-bold fs-4 mb-1">Escribinos</h2>
+            <p class="text-muted small mb-3">Completá el formulario y nos pondremos en contacto con vos a la brevedad.</p>
 
-                      <option value="perro">Canino (Perro)</option> 
-                      <option value="gato">Felino (Gato)</option> 
-                      <option value="conejo">Conejo</option> 
-                      <option value="hamster">Hámster / Roedor</option> 
-                      <option value="otro">Otro / Exótico</option> 
-                    </select> 
-                  </div> 
- 
-                  <div class="col-12 col-md-4"> 
-                    <label for="fecha" class="form-label fw-semibold small mb-1">Fecha deseada *</label> 
-                    <input type="date" class="form-control rounded-3" id="fecha" name="fecha" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-4"> 
-                    <label for="hora" class="form-label fw-semibold small mb-1">Horario aprox. *</label> 
-                    <input type="time" class="form-control rounded-3" id="hora" name="hora" required> 
-                  </div> 
- 
-                  <div class="col-12"> 
-                    <label for="motivo" class="form-label fw-semibold small mb-1">Motivo de la visita *</label> 
-                    <textarea class="form-control rounded-3" id="motivo" name="motivo" rows="2" placeholder="Contanos brevemente los síntomas o motivo de la visita..." required></textarea> 
-                  </div> 
- 
-                  <div class="col-12 text-end mt-3"> 
-                    <button type="submit" class="btn text-white fw-bold px-4 py-2 rounded-3 w-100 w-md-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);"> 
-                      <i class="bi bi-calendar-check me-2"></i>Solicitar Turno 
-                    </button> 
-                  </div> 
-                </form> 
-              </div> 
- 
-              <!-- FORMULARIO PARA CONSULTA GENERAL --> 
-              <div class="tab-pane fade" id="panel-consulta" role="tabpanel" aria-labelledby="tab-consulta"> 
-                <h2 class="titulo-principal fw-bold fs-4 mb-1">Consulta General</h2> 
-                <p class="text-muted small mb-3">Escribinos para resolver dudas sobre servicios, precios o trámites.</p> 
- 
-                <form action="#" method="POST" class="row g-3"> 
-                  <div class="col-12 col-md-6"> 
-                    <label for="nombreConsulta" class="form-label fw-semibold small mb-1">Nombre y Apellido *</label> 
-                    <input type="text" class="form-control rounded-3" id="nombreConsulta" name="nombreConsulta" placeholder="Ej: María Gómez" required> 
-                  </div> 
- 
-                  <div class="col-12 col-md-6"> 
-                    <label for="contactoGeneral" class="form-label fw-semibold small mb-1">Email / WhatsApp *</label> 
-                    <input type="text" class="form-control rounded-3" id="contactoGeneral" name="contactoGeneral" placeholder="Ej: maria@gmail.com o 3454123456" required> 
-                  </div> 
- 
-                  <div class="col-12"> 
-                    <label for="asunto" class="form-label fw-semibold small mb-1">Asunto *</label> 
-                    <input type="text" class="form-control rounded-3" id="asunto" name="asunto" placeholder="Ej: Consulta sobre vacunación / Medios de pago" required> 
-                  </div> 
- 
-                  <div class="col-12"> 
-                    <label for="mensajeConsulta" class="form-label fw-semibold small mb-1">Mensaje *</label> 
-                    <textarea class="form-control rounded-3" id="mensajeConsulta" name="mensajeConsulta" rows="4" placeholder="Escribí aquí tu consulta en detalle..." required></textarea> 
-                  </div> 
- 
-                  <div class="col-12 text-end mt-3"> 
-                    <button type="submit" class="btn text-white fw-bold px-4 py-2 rounded-3 w-100 w-md-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);"> 
-                      <i class="bi bi-send-fill me-2"></i>Enviar Consulta 
-                    </button> 
-                  </div> 
-                </form> 
-              </div> 
- 
-            </div> 
- 
-          </div> 
-        </article> 
+            <form action="#" class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="nombre" class="form-label fw-semibold small mb-1">Nombre y Apellido *</label>
+                <input type="text" class="form-control rounded-3" id="nombre" name="nombre" placeholder="Ej: María Gómez" required>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label fw-semibold small mb-1">Email *</label>
+                <input type="email" class="form-control rounded-3" id="email" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+
+              <div class="col-12">
+                <label for="asunto" class="form-label fw-semibold small mb-1">Asunto *</label>
+                <input type="text" class="form-control rounded-3" id="asunto" name="asunto" placeholder="Ej: Consulta sobre vacunación" required>
+              </div>
+
+              <div class="col-12">
+                <label for="mensaje" class="form-label fw-semibold small mb-1">Mensaje *</label>
+                <textarea class="form-control rounded-3" id="mensaje" name="mensaje" rows="4" placeholder="Escribí aquí tu mensaje..." required></textarea>
+              </div>
+
+              <div class="col-12 text-end mt-3">
+                <button type="submit" class="btn text-white fw-bold px-4 py-2 rounded-3 w-100 w-md-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
+                  Enviar mensaje
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </article>
  
       </div> 
     </section> 
@@ -282,6 +196,7 @@ align-items-center gap-3 text-white text-decoration-none">
     </section> 
  
   </main> 
+
  
  <!-- FOOTER --> 
 <footer class="p-4 text-white mt-auto" style="background-color: var(--color-violeta-oscuro3, #2f0f70);">
