@@ -1,3 +1,11 @@
+main {
+    background-image:
+        linear-gradient(rgba(255, 250, 244, 0.65), rgba(200, 197, 255, 0.65)),
+        url("../assets/imagen/consulta (1).jpg");
+    background-size: cover;
+    background-position: center top;
+}
+
 .titulo-login {
     font-family: var(--font-principal);
     color: var(--color-violeta-oscuro3);
