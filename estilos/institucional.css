@@ -12,13 +12,13 @@
     font-family: var(--font-principal);
     color: var(--color-violeta-oscuro3);
 }
-
-
+ 
+ 
 /* título principal */
 .titulo-institucional {
     font-family: var(--font-principal);
     color: var(--color-violeta-oscuro3);
-    font-size: 3.2rem;
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
     font-weight: 800;
 }
 .titulo-institucional::after {
@@ -30,21 +30,21 @@
     margin: 12px auto 0;
     border-radius: 5px;
 }
-
-
+ 
+ 
 /* título de sección */
 .valores h2,
 .instalaciones h2,
 .testimonios h2,
 .preguntas-frecuentes h2 {
-    font-size: 30px;
+    font-size: clamp(25px, 4vw, 30px);
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 40px;
     margin-bottom: 35px;
 }
-
-
+ 
+ 
 /* sobre nosotros */
 .sobre-nosotros-contenido {
     max-width: 1500px;
@@ -65,7 +65,7 @@
     font-size: 1.15rem;
     line-height: 1.8;
 }
-
+ 
 .imagen-institucional {
     width: 100%;
     max-width: 800px;
@@ -74,8 +74,8 @@
     border-radius: 60px 0px 60px 0px;
     box-shadow: 0 8px 25px rgba(13, 11, 47, 0.15);
 }
-
-
+ 
+ 
 /* misión y visión */
 .bloque-institucional {
     background-color: rgba(255, 255, 255, 0.6);
@@ -85,14 +85,15 @@
     color: #4a4a4a;
     line-height: 1.6;
 }
-.mision-vision .bloque-institucional:first-child {
+/* cada bloque está dentro de una columna de la grilla, por eso se apunta a la columna (hijo de .row) */
+.mision-vision .row > :first-child .bloque-institucional {
     border-left: 10px solid var(--color-violeta-oscuro3);
 }
-.mision-vision .bloque-institucional:last-child {
+.mision-vision .row > :last-child .bloque-institucional {
     border-right: 10px solid var(--color-violeta-oscuro3);
 }
-
-
+ 
+ 
 /* valores */
 .card-valor {
     background-color: var(--color-violeta-claro1);
@@ -101,15 +102,15 @@
 .card-valor:hover {
     transform: translateY(-5px);
 }
-
-
+ 
+ 
 /* instalaciones */
 .foto-galeria img {
     height: 220px;
     object-fit: cover;
 }
-
-
+ 
+ 
 /* testimonios */
 .card-testimonio {
     background-color: var(--color-violeta-claro1);
@@ -122,8 +123,8 @@
 .autor-testimonio .mascota {
     color: #777777;
 }
-
-
+ 
+ 
 /* FAQ */
 .item-faq {
     background-color: rgba(255, 255, 255, 0.7);
@@ -153,36 +154,10 @@
     font-size: 15px;
     line-height: 1.6;
 }
-
-
-/* responsive */
-@media (max-width: 767px) {
-
-    .titulo-institucional {
-        font-size: 2.4rem;
-    }
-    .valores h2,
-    .instalaciones h2,
-    .testimonios h2,
-    .preguntas-frecuentes h2 {
-        font-size: 25px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-
-    .titulo-institucional {
-        font-size: 2.8rem;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .bloque-institucional {
-        width: 85%;
-    }
-    .institucional .container {
-        width: 100%;
-        max-width: 1500px;
-    }
+ 
+ 
+/* ancho máximo del contenido en pantallas grandes */
+.institucional .container {
+    width: 100%;
+    max-width: 1500px;
 }
